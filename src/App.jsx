@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Work from './pages/Work';
@@ -7,10 +7,10 @@ import Holisis from './pages/Holisis';
 import Bio from './pages/Bio';
 import Contact from './pages/Contact';
 
-const App = () => {
+const AppRoutes = () => {
   const location = useLocation();
   console.log('Current route:', location.pathname);
-
+  
   return (
     <div className="app-container bg-white min-h-screen">
       <Layout>
@@ -36,6 +36,14 @@ const App = () => {
         </div>
       </Layout>
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <Router basename="/wanda-portfolio">
+      <AppRoutes />
+    </Router>
   );
 };
 
