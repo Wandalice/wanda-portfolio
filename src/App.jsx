@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Work from './pages/Work';
@@ -41,9 +41,9 @@ const AppRoutes = () => {
 
 const App = () => {
   return (
-    <Router basename="/wanda-portfolio">
+    <HashRouter>
       <AppRoutes />
-    </Router>
+    </HashRouter>
   );
 };
 
